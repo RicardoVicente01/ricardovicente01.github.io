@@ -1,3 +1,53 @@
 body {
     background-color: #b3b3b3;
 }
+/* Reseta as margens padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ponto 4: Cor de fundo geral no body */
+body {
+  background-color: #e0e0e0;
+  font-family: sans-serif;
+}
+
+/* Cabeçalho a verde com o título da cidade */
+header {
+  background-color: #4cae50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Ponto 5: Navegação a preto */
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Pontos 6 e 7: Conteúdo principal centralizado e com padding interno */
+main {
+  background-color: white;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Ponto 5: Rodapé a preto */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}

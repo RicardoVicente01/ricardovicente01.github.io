@@ -1,9 +1,31 @@
 <!doctype html>
 <html lang="pt">
   <head>
+    <style>
+       .poema p:nth-child(2n) {
+            background-color: lightblue;
+        }
+
+        .poema p:nth-child(2n+1) {
+            background-color: lightgray;
+        }
+
+        .fotografias {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .fotografias img {
+            width: 150px;
+            border-radius: 20px;
+        }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cidade-Multimédia</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
@@ -15,9 +37,47 @@
         <a href="info.html">Informação</a>
       </nav>
     </header>
+
     <main>
       <h2>Multimédia</h2>
-      <p>Fotos e vídeos sobre esta linda cidade.</p>
+      <p>Nesta página encontra conteúdos multimédia.</p>
+      <a href="#fotografias">Fotografias</a>
+      <a href="#video">Vídeo</a>
+      <a href="#poesia">Poesia</a>
+
+      <section>
+        <h3 id="fotografias">Fotografias</h3>
+    <div class="fotografias">
+      <img src="../images/oia.jpeg" alt="Vila de Oia">
+      <img src="../images/fira.jpeg" alt="Fira ao anoitecer">
+      <img src="../images/imerovigli.jpeg" alt="Imerovigli e a caldeira">
+      <img src="../images/redbeach.jpeg" alt="Praia Vermelha (Red Beach)">
+      <img src="../images/vulcao.jpeg" alt="Vulcão de Nea Kameni">
+      <img src="../images/akrotiri.jpeg" alt="Farol de Akrotiri">
+      <img src="../images/pyrgos.jpeg" alt="Vila tradicional de Pyrgos">
+      <img src="../images/castelo.jpeg" alt="Castelo de Oia">
+    </div>
+      </section>
+
+      <section>
+      <h3 id="video">Vídeo</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4zAEDLwl9HI?si=EIw3u5dXxt1qw1pY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </section>
+
+      <section>
+      <h3 id="poesia">Poesia</h3>
+    <div class="poema">
+      <p>Santorini, ilha de branco e azul,</p>
+      <p>Onde o mar encontra o céu,</p>
+      <p>O sol ilumina o horizonte,</p>
+      <p>E o vento percorre cada véu.</p>
+      <p>Casas sobre as encostas brilham,</p>
+      <p>Diante do mar azul profundo,</p>
+      <p>Santorini guarda a sua beleza,</p>
+      <p>Como um pequeno paraíso no mundo.</p>
+    </div>
+      </section>
+
     </main>
     <footer>
       <p>DIW 2026</p>
