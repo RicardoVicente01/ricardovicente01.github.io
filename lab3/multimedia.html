@@ -1,86 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <style>
-       .poema p:nth-child(2n) {
-            background-color: lightblue;
-        }
-
-        .poema p:nth-child(2n+1) {
-            background-color: lightgray;
-        }
-
-        .fotografias {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .fotografias img {
-            width: 150px;
-            border-radius: 20px;
-        }
-    </style>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cidade-Multimédia</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidade - Multimédia</title>
     <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+</head>
+<body>
+
     <header>
-      <h1>A minha Cidade</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-      </nav>
+        <h1>A minha Cidade - Multimédia</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+        </nav>
     </header>
 
     <main>
-      <h2>Multimédia</h2>
-      <p>Nesta página encontra conteúdos multimédia.</p>
-      <a href="#fotografias">Fotografias</a>
-      <a href="#video">Vídeo</a>
-      <a href="#poesia">Poesia</a>
+        <!-- Ponto 2: Nova secção com fotografia emblemática e frase sobreposta -->
+        <section id="banner-cidade">
+            <img src="images/cidade.png" alt="Fotografia Emblemática da Cidade">
+            <h2>Santorini: A Pérola do Egeu</h2>
+        </section>
 
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
-   <div class="fotografias">
-  <img src="images/oia.jpeg" alt="Vila de Oia">
-  <img src="images/Fira.jpeg" alt="Fira ao anoitecer">
-  <img src="images/Imerovigli.jpeg" alt="Imerovigli e a caldeira">
-  <img src="images/Red Beach.jpeg" alt="Praia Vermelha (Red Beach)">
-  <img src="images/nea-kameni.jpeg" alt="Vulcão de Nea Kameni">
-  <img src="images/Farol de Akrotiri.jpeg" alt="Farol de Akrotiri">
-  <img src="images/Pyrgos.jpeg" alt="Vila tradicional de Pyrgos">
-  <img src="images/Castelo de Oia.jpeg" alt="Castelo de Oia">
-    </div>
-      </section>
+        <!-- Secção de Fotografias / Galeria -->
+        <section id="galeria">
+            <h2>Galeria de Fotografias</h2>
+            <img src="images/oia.jpeg" alt="Vila de Oia">
+            <img src="images/Fira.jpeg" alt="Fira ao anoitecer">
+            <img src="images/Imerovigli.jpeg" alt="Imerovigli e a caldeira">
+            <img src="images/Red Beach.jpeg" alt="Praia Vermelha (Red Beach)">
+            <img src="images/nea-kameni.jpeg" alt="Vulcão de Nea Kameni">
+            <img src="images/Farol de Akrotiri.jpeg" alt="Farol de Akrotiri">
+            <img src="images/Pyrgos.jpeg" alt="Vila tradicional de Pyrgos">
+            <img src="images/Castelo de Oia.jpeg" alt="Castelo de Oia">
+        </section>
 
-      <section>
-      <h3 id="video">Vídeo</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4zAEDLwl9HI?si=EIw3u5dXxt1qw1pY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </section>
+        <!-- Secção de Vídeo -->
+        <section id="video">
+            <h2>Vídeo</h2>
+            <p>Vídeo promocional da região.</p>
+        </section>
 
-      <section>
-      <h3 id="poesia">Poesia</h3>
-    <div class="poema">
-      <p>Santorini, ilha de branco e azul,</p>
-      <p>Onde o mar encontra o céu,</p>
-      <p>O sol ilumina o horizonte,</p>
-      <p>E o vento percorre cada véu.</p>
-      <p>Casas sobre as encostas brilham,</p>
-      <p>Diante do mar azul profundo,</p>
-      <p>Santorini guarda a sua beleza,</p>
-      <p>Como um pequeno paraíso no mundo.</p>
-    </div>
-      </section>
-
+        <!-- Secção de Poesia -->
+        <section id="poesia">
+            <h2>Poesia</h2>
+            <p>Entre o azul do céu e o mar sem fim.</p>
+            <p>Erguem-se as casas brancas do jardim.</p>
+        </section>
     </main>
+
     <footer>
-      <p>DIW 2026</p>
+        <p>DIW 2026</p>
     </footer>
-  </body>
+
+</body>
 </html>

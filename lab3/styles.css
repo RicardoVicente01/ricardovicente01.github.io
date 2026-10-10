@@ -1,0 +1,91 @@
+/* --- Ponto 1: Configuração das secções com cores de fundo diferentes --- */
+#galeria, #video, #poesia {
+    min-height: 80vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#galeria {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#video {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#poesia {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* --- Ponto 2: Imagem 100% com Texto Sobreposto e fonte responsiva em vw --- */
+#banner-cidade {
+    position: relative; /* Necessário para posicionar o h2 com position: absolute */
+    padding: 0;
+    min-height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+#banner-cidade img {
+    width: 100%; /* Ocupa toda a largura do ecrã */
+    height: auto;
+    display: block;
+}
+
+#banner-cidade h2 {
+    position: absolute; /* Posiciona o texto por cima da imagem */
+    color: white;
+    font-size: 5vw; /* Tamanho do texto em vw para ser responsivo */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+/* --- Efeito Transition para imagens pequenas / galeria --- */
+
+#galeria img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+
+    /* Configura a transição suave de 0.3 segundos para a transformação e sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado quando o rato passa por cima (:hover) */
+#galeria img:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente a imagem */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
+}
+
+/* --- Regras do Lab 3 para a Localização --- */
+
+/* No PC: coloca o texto e o mapa lado a lado */
+.conteudo-localizacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+}
+
+.texto-localizacao,
+.conteudo-localizacao iframe {
+    flex: 1;
+    width: 100%;
+}
+
+/* No telemóvel (ecrãs até 768px): coloca o texto por cima do mapa */
+@media (max-width: 768px) {
+    .conteudo-localizacao {
+        flex-direction: column;
+        text-align: center;
+    }
+}
