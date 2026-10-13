@@ -1,5 +1,5 @@
 /* --- Ponto 1: Configuração das secções com cores de fundo diferentes --- */
-#galeria, #video, #poesia {
+#poesia {
     min-height: 80vh;
     padding: 40px 20px;
     display: flex;
@@ -7,21 +7,57 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #2c3e50;
+    color: white;
 }
 
 #galeria {
+    min-height: 80vh;
+    padding: 40px 20px;
+    text-align: center;
     background-color: #f4f4f4;
     color: #333;
 }
 
-#video {
-    background-color: #e0e0e0;
-    color: #333;
+.galeria-imagens {
+    display: flex;
+    flex-wrap: wrap; /* Passa para a linha seguinte se não couber */
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
 }
 
-#poesia {
-    background-color: #2c3e50;
+#video {
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: white;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    object-fit: cover;
+}
+
+/* Contentor opcional para garantir que o texto fica legível por cima do vídeo */
+.video-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Sombra forte no texto para leitura nítida */
 }
 
 /* --- Ponto 2: Imagem 100% com Texto Sobreposto e fonte responsiva em vw --- */
@@ -153,4 +189,33 @@
     .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
         grid-column: auto;
     }
+}
+
+.parallax {
+    /* Define uma altura fixa para a secção do parallax */
+    min-height: 400px;
+
+    /* Configura a imagem de fundo (podes usar uma das imagens que tens na pasta images) */
+    background-image: url('images/oia.jpeg');
+
+    /* Propriedades cruciais para o efeito parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Alinhamento do texto por cima da imagem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.parallax h2 {
+    font-size: 3vw;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px 30px;
+    border-radius: 8px;
 }

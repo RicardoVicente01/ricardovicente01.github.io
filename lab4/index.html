@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4 - Interatividade com JavaScript</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Laboratório 4 - Eventos e DOM</h1>
+      <p>Explorando a interatividade com JavaScript</p>
+    </header>
+
+    <main>
+      <!-- Secção do Contador -->
+      <section class="card">
+        <h2>Contador Dinâmico</h2>
+        <p>Cliques efetuados: <span id="contador">0</span></p>
+        <button id="btn-contar">Incrementar</button>
+      </section>
+
+      <!-- Secção de Eventos de Rato -->
+      <section class="card">
+        <h2>Interações com o Rato</h2>
+
+        <!-- 1. Click e DblClick -->
+        <button id="btn-interativo">Clica-me ou Faz Duplo Clique!</button>
+        <p id="texto-evento">
+          Passa o rato ou interage com os elementos abaixo.
+        </p>
+
+        <!-- 2. Mouseover e Mouseout -->
+        <div id="caixa-hover">
+          Passa o rato por cima de mim (Mouseover / Mouseout)
+        </div>
+
+        <!-- 3. Mousemove -->
+        <div id="area-movimento">
+          Move o rato aqui dentro! Coordenadas:
+          <span id="coords">X: 0, Y: 0</span>
+        </div>
+      </section>
+
+      <!-- Secção com Imagem -->
+      <section class="card">
+        <h2>Elemento Visual</h2>
+        <img
+          id="minha-imagem"
+          src="images/fotografia.png"
+          alt="Fotografia de Exemplo"
+        />
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Programação Web</p>
+    </footer>
+
+    <!-- Importação do script no final do body (Boas Práticas) -->
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
