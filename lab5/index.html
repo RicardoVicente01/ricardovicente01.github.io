@@ -94,6 +94,8 @@
         <button type="submit">Submit</button>
     </form>
     <h2 id="resultado-idade"></h2>
+    <!-- 7. Temporizador com setInterval -->
+    <h2>7. Automatic Counter: <span id="auto-counter">0</span></h2>
 
     <!-- 8. Contador com Local Storage -->
     <h2>Contador com Local Storage</h2>
@@ -101,7 +103,7 @@
     <button id="btn-inc">Incrementar</button>
     <button id="btn-dec">Decrementar</button>
     <button id="btn-reset">Reset</button>
-    
+
     <script>
         // --- Evento 1: Clique no título para mudar texto e cor ---
         const titulo = document.querySelector('#titulo');
@@ -196,6 +198,17 @@
             counterDisplay.textContent = contador;
             localStorage.setItem('counter', contador);
         });
+
+        // --- Evento 7: Temporizador com setInterval ---
+        let contadorAuto = 0;
+
+        function count() {
+            contadorAuto++;
+            document.querySelector('#auto-counter').textContent = contadorAuto;
+        }
+
+        // Executa a função count a cada 1000 milissegundos (1 segundo)[cite: 9]
+        setInterval(count, 1000);
     </script>
 
 </body>
