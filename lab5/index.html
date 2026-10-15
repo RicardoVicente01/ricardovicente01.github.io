@@ -19,6 +19,22 @@
             padding: 6px;
             font-size: 14px;
         }
+        .flex-container {
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            flex-direction: row; /* valor inicial */
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 10px;
+        }
+        .bola {
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -26,17 +42,23 @@
     <!-- 1. Evento de clique / alteração num elemento (Título) -->
     <h1 id="titulo">Passa por aqui!</h1>
 
-    <!-- 2. Eventos do rato (Botões de cores) -->
+    <!-- 2. Eventos do rato (Botões de cores com data-attributes) -->
     <div>
-        <button id="btn-red">Red</button>
-        <button id="btn-purple">Purple</button>
-        <button id="btn-orange">Orange</button>
+        <button class="color" data-color="lightcoral">Red</button>
+        <button class="color" data-color="plum">Purple</button>
+        <button class="color" data-color="moccasin">Orange</button>
     </div>
 
     <br>
 
-    <!-- 3. Evento de teclado (Alternância de cores no input) -->
-    <p>Indica em inglês uma cor para o fundo: <input type="text" id="input-cores" placeholder="Escreve aqui..."></p>
+    <!-- 3. Evento de seleção (Select com cores e uso do this) -->
+    <p>4. Escolha uma cor:
+        <select id="select-cores">
+            <option value="white">White</option>
+            <option value="lightcoral">Red</option>
+            <option value="lightblue">Blue</option>
+        </select>
+    </p>
 
     <!-- 4. Evento de formulário (Submit) -->
     <form id="meu-formulario">
@@ -49,10 +71,26 @@
     <h1 id="contador-display">0</h1>
     <button id="btn-conta">Conta!</button>
 
+    <!-- 6. Exercício Select Flex -->
+    <h2>6. Controlo de Flexbox com Select</h2>
+    <select id="select-flex">
+        <option value="row">row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">column</option>
+        <option value="column-reverse">column-reverse</option>
+    </select>
+
+    <div class="flex-container">
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+    </div>
+
     <script>
         // --- Evento 1: Clique no título para mudar texto e cor ---
         const titulo = document.querySelector('#titulo');
-        titulo.addEventListener('click', function() {
+        titulo.addEventListener('click', () => {
             if (titulo.textContent === "Passa por aqui!") {
                 titulo.textContent = "Bem-vindo ao Lab 5!";
                 titulo.style.color = "blue";
@@ -62,29 +100,16 @@
             }
         });
 
-        // --- Evento 2: Cliques nos botões de cores ---
-        const btnRed = document.querySelector('#btn-red');
-        const btnPurple = document.querySelector('#btn-purple');
-        const btnOrange = document.querySelector('#btn-orange');
-
-        btnRed.addEventListener('click', function() {
-            document.body.style.backgroundColor = 'lightcoral';
-        });
-        btnPurple.addEventListener('click', function() {
-            document.body.style.backgroundColor = 'plum';
-        });
-        btnOrange.addEventListener('click', function() {
-            document.body.style.backgroundColor = 'moccasin';
+        // --- Evento 2: Cliques nos botões de cores (com querySelectorAll, forEach e dataset) ---
+        document.querySelectorAll("button.color").forEach((button) => {
+            button.addEventListener('click', () => {
+                document.body.style.backgroundColor = button.dataset.color;
+            });
         });
 
-        // --- Evento 3: Alternância de 4 cores ao digitar (teclado) ---
-        const inputCores = document.querySelector('#input-cores');
-        const cores = ['#ffffff', '#f1c40f', '#3498db', '#e74c3c'];
-        let indiceCor = 0;
-
-        inputCores.addEventListener('keyup', function() {
-            indiceCor = (indiceCor + 1) % cores.length;
-            inputCores.style.backgroundColor = cores[indiceCor];
+        // --- Evento 3: Mudança de cor através de um <select> usando 'this' ---
+        document.querySelector('#select-cores').addEventListener('change', function() {
+            document.body.style.backgroundColor = this.value;
         });
 
         // --- Evento 4: Submissão de formulário (onsubmit) ---
@@ -92,8 +117,8 @@
         const inputNome = document.querySelector('#nome-utilizador');
         const saudacao = document.querySelector('#saudacao');
 
-        formulario.addEventListener('submit', function(evento) {
-            evento.preventDefault(); // Impede o recarregamento da página
+        formulario.addEventListener('submit', (evento) => {
+            evento.preventDefault();
             saudacao.textContent = `Olá, ${inputNome.value}!`;
         });
 
@@ -102,9 +127,14 @@
         const contadorDisplay = document.querySelector('#contador-display');
         let contador = 0;
 
-        btnConta.addEventListener('click', function() {
+        btnConta.addEventListener('click', () => {
             contador++;
             contadorDisplay.textContent = contador;
+        });
+
+        // --- Evento 6: Controlo de Flexbox com Select e 'this' ---
+        document.querySelector('#select-flex').addEventListener('change', function() {
+            document.querySelector('.flex-container').style.flexDirection = this.value;
         });
     </script>
 
