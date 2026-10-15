@@ -87,6 +87,21 @@
         <div class="bola"></div>
     </div>
 
+    <!-- 7. Exercício onsubmit (Nome e Idade) -->
+    <form id="form-idade">
+        <input id="nome" type="text" placeholder="insira o seu nome" required>
+        <input id="idade" type="number" placeholder="insira a sua idade" required>
+        <button type="submit">Submit</button>
+    </form>
+    <h2 id="resultado-idade"></h2>
+
+    <!-- 8. Contador com Local Storage -->
+    <h2>Contador com Local Storage</h2>
+    <h1 id="counter-display">0</h1>
+    <button id="btn-inc">Incrementar</button>
+    <button id="btn-dec">Decrementar</button>
+    <button id="btn-reset">Reset</button>
+    
     <script>
         // --- Evento 1: Clique no título para mudar texto e cor ---
         const titulo = document.querySelector('#titulo');
@@ -135,6 +150,51 @@
         // --- Evento 6: Controlo de Flexbox com Select e 'this' ---
         document.querySelector('#select-flex').addEventListener('change', function() {
             document.querySelector('.flex-container').style.flexDirection = this.value;
+        });
+
+        // --- Evento 7: Formulário Nome e Idade ---
+        const formIdade = document.querySelector('#form-idade');
+        const inputNomeIdade = document.querySelector('#nome');
+        const inputIdade = document.querySelector('#idade');
+        const resultadoIdade = document.querySelector('#resultado-idade');
+
+        formIdade.addEventListener('submit', (e) => {
+            e.preventDefault(); // Para não recarregar a página[cite: 6]
+            resultadoIdade.textContent = `Olá, o ${inputNomeIdade.value} tem ${inputIdade.value}!`;
+        });
+
+        // Se não existe a chave counter em localStorage, inicializamos[cite: 6].
+        if (!localStorage.getItem('counter')) {
+            localStorage.setItem('counter', 0);
+        }
+
+        // Elemento do display do contador com Local Storage
+        const counterDisplay = document.querySelector('#counter-display');
+
+        // Quando carregada a página, devemos atualizar o elemento que mostra o counter[cite: 6]
+        counterDisplay.textContent = localStorage.getItem('counter');
+
+        // Botão Incrementar
+        document.querySelector('#btn-inc').addEventListener('click', () => {
+            let contador = parseInt(localStorage.getItem('counter'));
+            contador++;
+            counterDisplay.textContent = contador;
+            localStorage.setItem('counter', contador);
+        });
+
+        // Botão Decrementar
+        document.querySelector('#btn-dec').addEventListener('click', () => {
+            let contador = parseInt(localStorage.getItem('counter'));
+            contador--;
+            counterDisplay.textContent = contador;
+            localStorage.setItem('counter', contador);
+        });
+
+        // Botão Reset
+        document.querySelector('#btn-reset').addEventListener('click', () => {
+            let contador = 0;
+            counterDisplay.textContent = contador;
+            localStorage.setItem('counter', contador);
         });
     </script>
 
