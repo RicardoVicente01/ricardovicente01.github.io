@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 - Eventos 1.0</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 6px 12px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            padding: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Evento de clique / alteração num elemento (Título) -->
+    <h1 id="titulo">Passa por aqui!</h1>
+
+    <!-- 2. Eventos do rato (Botões de cores) -->
+    <div>
+        <button id="btn-red">Red</button>
+        <button id="btn-purple">Purple</button>
+        <button id="btn-orange">Orange</button>
+    </div>
+
+    <br>
+
+    <!-- 3. Evento de teclado (Alternância de cores no input) -->
+    <p>Indica em inglês uma cor para o fundo: <input type="text" id="input-cores" placeholder="Escreve aqui..."></p>
+
+    <!-- 4. Evento de formulário (Submit) -->
+    <form id="meu-formulario">
+        <input type="text" id="nome-utilizador" placeholder="Nome" required>
+        <button type="submit">Submeter</button>
+    </form>
+    <h2 id="saudacao"></h2>
+
+    <!-- 5. Contador simples -->
+    <h1 id="contador-display">0</h1>
+    <button id="btn-conta">Conta!</button>
+
+    <script>
+        // --- Evento 1: Clique no título para mudar texto e cor ---
+        const titulo = document.querySelector('#titulo');
+        titulo.addEventListener('click', function() {
+            if (titulo.textContent === "Passa por aqui!") {
+                titulo.textContent = "Bem-vindo ao Lab 5!";
+                titulo.style.color = "blue";
+            } else {
+                titulo.textContent = "Passa por aqui!";
+                titulo.style.color = "black";
+            }
+        });
+
+        // --- Evento 2: Cliques nos botões de cores ---
+        const btnRed = document.querySelector('#btn-red');
+        const btnPurple = document.querySelector('#btn-purple');
+        const btnOrange = document.querySelector('#btn-orange');
+
+        btnRed.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'lightcoral';
+        });
+        btnPurple.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'plum';
+        });
+        btnOrange.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'moccasin';
+        });
+
+        // --- Evento 3: Alternância de 4 cores ao digitar (teclado) ---
+        const inputCores = document.querySelector('#input-cores');
+        const cores = ['#ffffff', '#f1c40f', '#3498db', '#e74c3c'];
+        let indiceCor = 0;
+
+        inputCores.addEventListener('keyup', function() {
+            indiceCor = (indiceCor + 1) % cores.length;
+            inputCores.style.backgroundColor = cores[indiceCor];
+        });
+
+        // --- Evento 4: Submissão de formulário (onsubmit) ---
+        const formulario = document.querySelector('#meu-formulario');
+        const inputNome = document.querySelector('#nome-utilizador');
+        const saudacao = document.querySelector('#saudacao');
+
+        formulario.addEventListener('submit', function(evento) {
+            evento.preventDefault(); // Impede o recarregamento da página
+            saudacao.textContent = `Olá, ${inputNome.value}!`;
+        });
+
+        // --- Evento 5: Contador dinâmico ---
+        const btnConta = document.querySelector('#btn-conta');
+        const contadorDisplay = document.querySelector('#contador-display');
+        let contador = 0;
+
+        btnConta.addEventListener('click', function() {
+            contador++;
+            contadorDisplay.textContent = contador;
+        });
+    </script>
+
+</body>
+</html>
