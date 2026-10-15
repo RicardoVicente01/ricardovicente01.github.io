@@ -47,13 +47,36 @@ section {
     border: 1px solid black;
 }
 
-/* Cores diferentes para destacar cada secção (como no teu exercício) */
-section:nth-child(1) {
+/* Secção 1: Hero (usando o ID #inicio para garantir que a cor e estilos não falham) */
+section#inicio {
     background-color: #2c3e50;
     color: white;
 }
 
-section:nth-child(1) a {
+/* Ajustes de tipografia seguros para o Hero */
+section#inicio p:first-of-type {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+section#inicio h1 {
+    font-size: 2.5rem;
+    max-width: 800px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+section#inicio p:nth-of-type(2) {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+section#inicio a {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
@@ -63,7 +86,8 @@ section:nth-child(1) a {
     border-radius: 4px;
 }
 
-section:nth-child(2) {
+/* Secção 2: Projetos */
+section#projetos {
     background-color: orange;
     color: black;
 }
@@ -82,7 +106,8 @@ article a {
     font-weight: bold;
 }
 
-section:nth-child(3) {
+/* Secção 3: Cadeira */
+section#cadeira {
     background-color: white;
     color: black;
 }
