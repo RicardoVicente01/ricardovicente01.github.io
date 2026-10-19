@@ -5,18 +5,19 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #f8fafc; /* Fundo mais limpo e claro */
+  color: #1e293b;            /* Texto mais escuro e legível */
 }
 
 header {
-  background-color: #333;
+  background-color: #0f172a; /* Azul escuro profundo (estilo Santorini) */
   color: white;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: 4px solid #0077be; /* Linha azul marinho */
 }
 
 header h1 {
@@ -25,14 +26,14 @@ header h1 {
 }
 
 nav a {
-  color: white;
+  color: #e2e8f0;
   text-decoration: none;
   margin-left: 15px;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: dodgerblue;
+  color: #38bdf8; /* Azul claro ao passar o rato */
 }
 
 main {
@@ -48,8 +49,9 @@ main section {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #333;
+  background-color: #0f172a; /* Azul escuro igual ao header */
   color: white;
+  border-top: 4px solid #0077be;
 }
 
 /* ==========================================
@@ -99,7 +101,7 @@ footer {
 
 .galeria-imagens img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 77, 126, 0.2);
 }
 
 /* ==========================================
@@ -140,7 +142,7 @@ footer {
 
 .grid-informacoes > div {
   background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #cbd5e1;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -197,7 +199,7 @@ footer {
   position: relative;
   padding: 25px 40px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(15, 23, 42, 0.7); /* Fundo azul escuro translúcido */
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -226,7 +228,7 @@ footer {
 .content {
   padding: 40px 20px;
   background-color: white;
-  color: #333;
+  color: #1e293b;
   text-align: center;
   border-radius: 8px;
 }
