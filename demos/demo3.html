@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 3 - Responsividade e DevTools</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Estilos específicos da Demonstração 3 */
+      .demo-caixa {
+        background-color: #e0e0e0;
+        color: #333333;
+        padding: 20px;
+        margin: 10px 0;
+        text-align: center;
+        border-radius: 4px;
+      }
+
+      /* Media Query: Altera a cor de fundo em ecrãs pequenos (ex: telemóvel) */
+      @media (max-width: 600px) {
+        .demo-caixa {
+          background-color: #b3d9ff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Demonstração 3: Responsividade</h1>
+      <p>Desenvolvido por: Ricardo Vicente</p>
+      <nav>
+        <a href="demos.html">Voltar às Demos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Teste de Adaptação de Ecrã</h2>
+        <p>Redimensiona a janela do navegador ou abre as DevTools para testar a responsividade:</p>
+
+        <div class="demo-caixa">
+          <p>Esta caixa muda de cor consoante a largura do ecrã (abaixo de 600px).</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Demos</p>
+    </footer>
+  </body>
+</html>

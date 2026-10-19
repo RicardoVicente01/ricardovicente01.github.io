@@ -1,221 +1,232 @@
-/* --- Ponto 1: Configuração das secções com cores de fundo diferentes --- */
-#poesia {
-    min-height: 80vh;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #2c3e50;
-    color: white;
+/* ==========================================
+   1. ESTRUTURA GERAL E CABEÇALHO
+   ================================---------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-#galeria {
-    min-height: 80vh;
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #f4f4f4;
-    color: #333;
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: dodgerblue;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main section {
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+/* ==========================================
+   2. HERO MULTIMÉDIA
+   ================================---------- */
+#hero-multimedia {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+#hero-multimedia img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#hero-multimedia h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 4rem;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================
+   3. GALERIA DE FOTOGRAFIAS (SEM SOBREPOSIÇÕES)
+   ================================---------- */
 .galeria-imagens {
-    display: flex;
-    flex-wrap: wrap; /* Passa para a linha seguinte se não couber */
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 30px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 10px 0;
 }
 
-#video {
-    position: relative;
-    overflow: hidden;
-    min-height: 80vh;
-    display: flex;
+.galeria-imagens img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Evita que a imagem distorça ou saia da caixa */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-imagens img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   4. LOCALIZAÇÃO E MEDIA QUERIES
+   ================================---------- */
+.texto-local {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.texto-local p,
+.texto-local iframe {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .texto-local {
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+  }
+
+  .texto-local p,
+  .texto-local iframe {
+    width: 50%;
+  }
+}
+
+/* ==========================================
+   5. GRID DE INFORMAÇÕES
+   ================================---------- */
+.grid-informacoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.grid-informacoes > div {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.grid-informacoes img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.bloco-1 { grid-column: span 2; }
+.bloco-2 { grid-column: span 1; }
+.bloco-3 { grid-column: span 1; }
+.bloco-4 { grid-column: span 1; }
+.bloco-5 { grid-column: span 1; }
+.bloco-6 { grid-column: span 2; }
+
+@media (max-width: 768px) {
+  .grid-informacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .bloco-1, .bloco-2, .bloco-3, .bloco-4, .bloco-5, .bloco-6 {
+    grid-column: auto;
+  }
+}
+
+/* ==========================================
+   6. VÍDEO DE FUNDO
+   ================================---------- */
+#video {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
 }
 
 .background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 1;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Contentor opcional para garantir que o texto fica legível por cima do vídeo */
 .video-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Sombra forte no texto para leitura nítida */
+  position: relative;
+  padding: 25px 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Ponto 2: Imagem 100% com Texto Sobreposto e fonte responsiva em vw --- */
-#banner-cidade {
-    position: relative; /* Necessário para posicionar o h2 com position: absolute */
-    padding: 0;
-    min-height: auto;
-    width: 100%;
-    overflow: hidden;
-}
-
-#banner-cidade img {
-    width: 100%; /* Ocupa toda a largura do ecrã */
-    height: auto;
-    display: block;
-}
-
-#banner-cidade h2 {
-    position: absolute; /* Posiciona o texto por cima da imagem */
-    color: white;
-    font-size: 5vw; /* Tamanho do texto em vw para ser responsivo */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    padding: 10px;
-}
-
-/* --- Efeito Transition para imagens pequenas / galeria --- */
-
-#galeria img {
-    width: 250px;
-    height: auto;
-    border-radius: 8px;
-
-    /* Configura a transição suave de 0.3 segundos para a transformação e sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Estado quando o rato passa por cima (:hover) */
-#galeria img:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente a imagem */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
-}
-
-/* --- Regras do Lab 3 para a Localização --- */
-
-/* No PC: coloca o texto e o mapa lado a lado */
-.conteudo-localizacao {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 20px;
-}
-
-.texto-localizacao,
-.conteudo-localizacao iframe {
-    flex: 1;
-    width: 100%;
-}
-
-/* No telemóvel (ecrãs até 768px): coloca o texto por cima do mapa */
-@media (max-width: 768px) {
-    .conteudo-localizacao {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* --- Página Informações: CSS Grid Layout --- */
-
-.grid-informacoes {
-    display: grid;
-    /* Cria 3 colunas de largura igual */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Estilo geral para os elementos da grelha */
-.grid-informacoes .item {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.grid-informacoes .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-}
-
-/* Posicionamento específico para criar espaços em branco (vazios) na grelha */
-.item-1 {
-    grid-column: 1 / 3; /* Ocupa as colunas 1 e 2 */
-}
-
-.item-2 {
-    grid-column: 3 / 4; /* Fica na coluna 3 */
-}
-
-.item-3 {
-    grid-column: 1 / 2; /* Fica na coluna 1 */
-    /* Deixa a coluna 2 VAZIA na segunda linha */
-}
-
-.item-4 {
-    grid-column: 3 / 4; /* Fica na coluna 3 */
-}
-
-.item-5 {
-    grid-column: 1 / 2;
-}
-
-.item-6 {
-    grid-column: 2 / 4; /* Ocupa as colunas 2 e 3 */
-}
-
-/* Responsividade para telemóveis */
-@media (max-width: 768px) {
-    .grid-informacoes {
-        grid-template-columns: 1fr; /* 1 coluna no telemóvel */
-    }
-
-    .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
-        grid-column: auto;
-    }
-}
-
+/* ==========================================
+   7. PARALLAX E CONTEÚDO
+   ================================---------- */
 .parallax {
-    /* Define uma altura fixa para a secção do parallax */
-    min-height: 400px;
-
-    /* Configura a imagem de fundo (podes usar uma das imagens que tens na pasta images) */
-    background-image: url('images/oia.jpeg');
-
-    /* Propriedades cruciais para o efeito parallax */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    /* Alinhamento do texto por cima da imagem */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+  background-image: url("images/oia.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
 }
 
-.parallax h2 {
-    font-size: 3vw;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 15px 30px;
-    border-radius: 8px;
+.content {
+  padding: 40px 20px;
+  background-color: white;
+  color: #333;
+  text-align: center;
+  border-radius: 8px;
 }

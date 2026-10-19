@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 2 - Composição de Seletores</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Estilos específicos da Demonstração 2 */
+      main > div:nth-child(2) div:nth-child(2) {
+        color: blue;
+      }
+      main > div:nth-child(2) div:last-child {
+        color: green;
+      }
+      div + p {
+        color: purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Demonstração 2: Composição de Seletores</h1>
+      <p>Desenvolvido por: Ricardo Vicente</p>
+      <nav>
+        <a href="demos.html">Voltar às Demos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Testes de Composição</h2>
+        <p>Abaixo estão os blocos de teste conforme o vídeo 2 da playlist[cite: 3]:</p>
+
+        <div>
+          <span>Span de teste</span>
+        </div>
+
+        <div>
+          <div>Bloco interno 1</div>
+          <div>Bloco interno 2 (azul)</div>
+          <div>Bloco interno 3 (verde)</div>
+        </div>
+
+        <div>Este div é um irmão independente.</div>
+        <p>Este parágrafo vem logo a seguir a um div (violeta).</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Demos</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 4 - Position (Relative e Absolute)</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Estilos específicos da Demonstração 4 */
+      .demo-fora {
+        position: relative;
+        background-color: salmon;
+        height: 200px;
+        width: 80%;
+        margin: 20px auto;
+        border: 1px solid black;
+      }
+
+      .demo-dentro {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: grey;
+        color: white;
+        padding: 10px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Demonstração 4: Position CSS</h1>
+      <p>Desenvolvido por: Ricardo Vicente</p>
+      <nav>
+        <a href="demos.html">Voltar às Demos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Exemplo de Posicionamento</h2>
+        <p>Abaixo encontra-se a demonstração de caixas com posicionamento relativo e absoluto:</p>
+
+        <!-- Contentor com position relative e absolute -->
+        <div class="demo-fora">
+          <div class="demo-dentro">Texto</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Demos</p>
+    </footer>
+  </body>
+</html>

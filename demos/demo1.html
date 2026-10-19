@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 1 - Seletores Child</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Estilos específicos apenas para esta demo */
+      body > h1:first-child {
+        color: blue;
+      }
+      body > ul > li {
+        color: red;
+      }
+      ul ul li:nth-child(2n) {
+        color: purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Demonstração 1: Seletores Child</h1>
+      <p>Desenvolvido por: Ricardo Vicente</p>
+      <nav>
+        <a href="demos.html">Voltar às Demos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Testes de Seletores CSS</h2>
+        <p>Abaixo estão as listas de teste conforme o primeiro vídeo da Playlist:</p>
+
+        <ul>
+          <li>Item Principal 1</li>
+          <li>Item Principal 2
+            <ul>
+              <li>Sub-item 1</li>
+              <li>Sub-item 2</li>
+              <li>Sub-item 3</li>
+              <li>Sub-item 4</li>
+            </ul>
+          </li>
+          <li>Item Principal 3</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Demos</p>
+    </footer>
+  </body>
+</html>

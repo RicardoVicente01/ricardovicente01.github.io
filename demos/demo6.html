@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 6 - CSS Grid Layout</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Estilos específicos da Demonstração 6 */
+      .demo-contentor {
+        display: grid;
+        height: 500px;
+        background-color: dodgerblue;
+        padding: 10px;
+        gap: 10px;
+        grid-template-areas:
+          "header header header"
+          "menu main info"
+          "menu footer footer";
+        grid-template-columns: 20vw 3fr 1fr;
+        grid-template-rows: 15vh 1fr 60px;
+        margin: 20px 0;
+      }
+
+      .demo-contentor > * {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      .demo-header { grid-area: header; }
+      .demo-menu { grid-area: menu; }
+      .demo-main { grid-area: main; }
+      .demo-info { grid-area: info; }
+      .demo-footer { grid-area: footer; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Demonstração 6: CSS Grid Layout</h1>
+      <p>Desenvolvido por: Ricardo Vicente</p>
+      <nav>
+        <a href="demos.html">Voltar às Demos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Exemplo de Grid Layout</h2>
+        <p>Abaixo encontra-se um layout estruturado com Grid:</p>
+
+        <div class="demo-contentor">
+          <header class="demo-header">Cabeçalho</header>
+          <nav class="demo-menu">Menu</nav>
+          <main class="demo-main">Conteúdo Principal</main>
+          <aside class="demo-info">Informação</aside>
+          <footer class="demo-footer">Rodapé</footer>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Demos</p>
+    </footer>
+  </body>
+</html>

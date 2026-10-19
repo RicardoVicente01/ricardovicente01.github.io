@@ -6,29 +6,30 @@
     <title>Cidade - Multimédia</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
-      <h1>A minha Cidade - Multimédia</h1>
+         <h1>A minha Cidade - Multimédia</h1>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="local.html">Localização</a>
         <a href="multimedia.html">Multimédia</a>
         <a href="info.html">Informação</a>
+        <a href="../tutoriais/tutoriais.html">Tutoriais</a>
+        <a href="../demos/demos.html">Demos</a>
       </nav>
     </header>
 
     <main>
-      <!-- Ponto 2: Nova secção com fotografia emblemática e frase sobreposta -->
-      <section id="banner-cidade">
-        <img src="images/cidade.png" alt="Fotografia Emblemática da Cidade" />
-        <h2>Santorini: A Pérola do Egeu</h2>
-      </section>
+        <section id="hero-multimedia">
+            <img src="images/cidade.png" alt="Fotografia emblemática da cidade">
+            <h2>Santorini</h2>
+        </section>
 
-      <!-- Secção de Fotografias / Galeria -->
-      <section id="galeria">
-        <h2>Galeria de Fotografias</h2>
+        <section id="fotografias">
+            <h2>Fotografias</h2>
 
-        <div class="galeria-imagens">
+            <div class="galeria-imagens">
           <img src="images/oia.jpeg" alt="Vila de Oia" />
           <img src="images/Fira.jpeg" alt="Fira ao anoitecer" />
           <img src="images/Imerovigli.jpeg" alt="Imerovigli e a caldeira" />
@@ -37,34 +38,47 @@
           <img src="images/Farol de Akrotiri.jpeg" alt="Farol de Akrotiri" />
           <img src="images/Pyrgos.jpeg" alt="Vila tradicional de Pyrgos" />
           <img src="images/Castelo de Oia.jpeg" alt="Castelo de Oia" />
-        </div>
-      </section>
+            </div>
+        </section>
 
-      <!-- Secção de Vídeo -->
-      <section id="video">
-        <video class="background-video" autoplay muted loop playsinline>
-          <source
-            src="videos/istockphoto-2164312672-640_adpp_is.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="video-content">
-          <h2>Vídeo de Santorini</h2>
-          <p>Vídeo promocional da região.</p>
-        </div>
-      </section>
+        <section id="video">
+          <video class="background-video" autoplay muted loop playsinline>
+            <source src="videos/istockphoto-2164312672-640_adpp_is.mp4" type="video/mp4"/>
+          </video>
+          <div class="video-content">
+            <h2>Vídeo de Santorini</h2>
+            <p>Vídeo promocional da região.</p>
+          </div>
+        </section>
 
-      <!-- Secção de Poesia -->
-      <section id="poesia">
-        <h2>Poesia</h2>
-        <p>Entre o azul do céu e o mar sem fim.</p>
-        <p>Erguem-se as casas brancas do jardim.</p>
-      </section>
+        <section id="Poesia">
+            <h2>Poesia</h2>
+            <p>Entre o azul do céu e o mar sem fim.</p>
+            <p>Erguem-se as casas brancas do jardim.</p>
+        </section>
 
-      <!-- Secção com Efeito Parallax -->
-      <section class="parallax">
-        <h2>Efeito Parallax em Santorini</h2>
-      </section>
+        <section class="parallax">
+          Efeito Parallax
+        </section>
+
+        <section class="content">
+          <h1>Faça Scroll down</h1>
+          <p>
+            A imagem de fundo fica fixa enquanto o conteúdo se move. Este é o efeito parallax.
+          </p>
+        </section>
+
+        <section class="parallax">
+          Outra Secção
+        </section>
+
+        <section class="content">
+          <h1>Faça Scroll down</h1>
+          <p>
+            Os elementos paralax devem ter uma altura definida. E ter em background uma imagem que deve estar fixa
+          </p>
+        </section>
+
     </main>
 
     <footer>
