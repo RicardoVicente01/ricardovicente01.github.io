@@ -1,66 +1,92 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ==========================================
+   1. ESTILOS GERAIS
+   ================================---------- */
 body {
-    font-family: sans-serif;
-    background-color: #e0e0e0;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+/* ==========================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ================================---------- */
 header {
-    background-color: #4cae50;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background: #2c3e50;
+  position: sticky;
+  height: 10vh;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
 }
 
-/* Menu no Desktop */
-nav {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+header h1 {
+  font-size: 2.2vh;
+  color: white;
+  margin: 0;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    background-color: #222;
-    border-radius: 4px;
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-nav a:hover {
-    background-color: #4cae50;
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
-/* Menu no Telemóvel (Responsivo) */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        width: 80%;
-        text-align: center;
-    }
+header nav a:hover {
+  color: #3498db;
 }
 
-main {
-    background-color: white;
-    margin: 20px auto;
-    max-width: 900px;
-    padding: 20px;
-    border-radius: 4px;
+
+/* ==========================================
+   3. SECÇÕES DA PÁGINA (LANDING PAGE)
+   ================================---------- */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
 }
 
+/* Cores e fundos individuais por secção */
+section:nth-child(1) {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lab1/images/cidade.png') no-repeat center center/cover;
+  color: white;
+}
+
+section:nth-child(2) {
+  background: #ffdab9;
+  color: #333;
+}
+
+section:nth-child(3) {
+  background: #e8f4f8;
+  color: #333;
+}
+
+
+/* ==========================================
+   4. RODAPÉ
+   ================================---------- */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
+  height: 10vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

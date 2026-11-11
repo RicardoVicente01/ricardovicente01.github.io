@@ -1,127 +1,81 @@
+/* Configuração global e box-sizing */
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: #e0e0e0;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-/* Cabeçalho fixo no topo */
+/* Cabeçalho fixo no topo (Sticky Header) */
 header {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  background-color: #2c3e50;
+  position: sticky;
+  height: 10vh;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
 }
 
-/* Navegação do Menu */
+/* Estilização do menu de navegação da hero image */
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
+  list-style: none; /* Remove os bullets */
+  padding: 0;        /* Remove o recuo interno */
+  margin: 0;         /* Remove o recuo externo */
+  display: flex;     /* Coloca os itens em linha */
+  gap: 20px;         /* Espaçamento entre os links */
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: white;          /* Cor do texto */
+  font-weight: bold;
 }
 
-/* Regra das secções com alturas e flexbox para centrar conteúdo */
-section {
-    min-height: 100vh;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+nav a:hover {
+  color: #3498db;
 }
 
-/* Secção 1: Hero (usando o ID #inicio para garantir que a cor e estilos não falham) */
-section#inicio {
-    background-color: #2c3e50;
-    color: white;
+/* Altura e comportamento das secções (Hero, Projetos, Disciplina) */
+section:nth-child(1) {
+  height: 90vh;
+  background: #34495e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Ajustes de tipografia seguros para o Hero */
-section#inicio p:first-of-type {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    opacity: 0.8;
+section:nth-child(2) {
+  min-height: 100vh;
+  background: #f4f4f4;
+  padding: 40px;
 }
 
-section#inicio h1 {
-    font-size: 2.5rem;
-    max-width: 800px;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-section#inicio p:nth-of-type(2) {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-section#inicio a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-/* Secção 2: Projetos */
-section#projetos {
-    background-color: orange;
-    color: black;
-}
-
-/* Artigos/Caixas dentro da secção de projetos */
-article {
-    background-color: white;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 20px;
-    width: 250px;
-}
-
-article a {
-    color: blue;
-    font-weight: bold;
-}
-
-/* Secção 3: Cadeira */
-section#cadeira {
-    background-color: white;
-    color: black;
-}
-
-section img {
-    max-width: 300px;
-    height: auto;
-    margin-top: 20px;
+section:nth-child(3) {
+  min-height: 80vh;
+  background: #ecf0f1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Rodapé */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
+  height: 10vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
