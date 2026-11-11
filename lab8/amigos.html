@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 8 - API de Amigos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Lista de Amigos (API RESTful)</h1>
+    <div id="amigos-container"></div>
+
+    <script>
+        // Exemplo de fetch para a API de amigos referida no enunciado
+        fetch('https://amigos.pw.deisi.ulusofona.pt/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const container = document.getElementById('amigos-container');
+                data.forEach( amigo => {
+                    const p = document.createElement('p');
+                    p.textContent = amigo.name || JSON.stringify(amigo);
+                    container.appendChild(p);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar amigos:', error));
+    </script>
+</body>
+</html>

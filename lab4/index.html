@@ -1,63 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 4 - Interatividade com JavaScript</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - 5 Eventos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <header>
-      <h1>Laboratório 4 - Eventos e DOM</h1>
-      <p>Explorando a interatividade com JavaScript</p>
+        <h1>Página "artilhada" com 5 Eventos</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
     </header>
 
     <main>
-      <!-- Secção do Contador -->
-      <section class="card">
-        <h2>Contador Dinâmico</h2>
-        <p>Cliques efetuados: <span id="contador">0</span></p>
-        <button id="btn-contar">Incrementar</button>
-      </section>
+        <!-- 1. Passa por aqui! (mouseover / mouseout) -->
+        <section>
+            <p id="texto-passa">1. Passa por aqui!</p>
+        </section>
 
-      <!-- Secção de Eventos de Rato -->
-      <section class="card">
-        <h2>Interações com o Rato</h2>
+        <!-- 2. Pinta-me! (click em Red, Green, Blue) -->
+        <section>
+            <p>
+                <span id="titulo-pinta">2. Pinta-me!</span>
+                <button id="button-red">Red</button>
+                <button id="button-green">Green</button>
+                <button id="button-blue">Blue</button>
+            </p>
+        </section>
 
-        <!-- 1. Click e DblClick -->
-        <button id="btn-interativo">Clica-me ou Faz Duplo Clique!</button>
-        <p id="texto-evento">
-          Passa o rato ou interage com os elementos abaixo.
-        </p>
+        <!-- 3. Experimenta escrever... (input) -->
+        <section>
+            <p>
+                3. Experimenta escrever...
+                <input type="text" id="input-escrever">
+            </p>
+        </section>
 
-        <!-- 2. Mouseover e Mouseout -->
-        <div id="caixa-hover">
-          Passa o rato por cima de mim (Mouseover / Mouseout)
-        </div>
+        <!-- 4. Escolha uma cor em inglês (submeter cor) -->
+        <section>
+            <p>
+                4. Escolha uma cor em inglês:
+                <input type="text" id="input-cor">
+                <button id="button-submeter">submeter</button>
+            </p>
+        </section>
 
-        <!-- 3. Mousemove -->
-        <div id="area-movimento">
-          Move o rato aqui dentro! Coordenadas:
-          <span id="coords">X: 0, Y: 0</span>
-        </div>
-      </section>
-
-      <!-- Secção com Imagem -->
-      <section class="card">
-        <h2>Elemento Visual</h2>
-        <img
-          id="minha-imagem"
-          src="images/fotografia.png"
-          alt="Fotografia de Exemplo"
-        />
-      </section>
+        <!-- 5. Conta! -->
+        <section>
+            <p>
+                5. <button id="button-conta">Conta!</button>
+                <span id="valor-contador">33</span>
+            </p>
+        </section>
     </main>
 
     <footer>
-      <p>DIW 2026 - Programação Web</p>
+        <p>DIW 2026</p>
     </footer>
 
-    <!-- Importação do script no final do body (Boas Práticas) -->
+    <!-- Script no final do body por boas práticas -->
     <script src="scripts/main.js"></script>
-  </body>
+</body>
 </html>

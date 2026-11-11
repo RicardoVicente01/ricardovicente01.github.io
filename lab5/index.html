@@ -3,213 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 5 - Eventos 1.0</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-        }
-        button {
-            padding: 6px 12px;
-            margin-right: 5px;
-            cursor: pointer;
-        }
-        input[type="text"] {
-            padding: 6px;
-            font-size: 14px;
-        }
-        .flex-container {
-            height: 200px;
-            background-color: #e0e0e0;
-            display: flex;
-            flex-direction: row; /* valor inicial */
-            align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 10px;
-        }
-        .bola {
-            width: 30px;
-            height: 30px;
-            background-color: #3498db;
-            border-radius: 50%;
-        }
-    </style>
+    <title>Lab 5 - Eventos 2.0</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Página "artilhada" com Eventos 2.0</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+    </header>
 
-    <!-- 1. Evento de clique / alteração num elemento (Título) -->
-    <h1 id="titulo">Passa por aqui!</h1>
+    <main>
+        <!-- 1. Passa por aqui! -->
+        <section>
+            <p id="texto-passa">1. Passa por aqui!</p>
+        </section>
 
-    <!-- 2. Eventos do rato (Botões de cores com data-attributes) -->
-    <div>
-        <button class="color" data-color="lightcoral">Red</button>
-        <button class="color" data-color="plum">Purple</button>
-        <button class="color" data-color="moccasin">Orange</button>
-    </div>
+        <!-- 2. Pinta-me (com data-color e querySelectorAll) -->
+        <section>
+            <p>
+                <span id="titulo-pinta">2. Pinta-me</span>
+                <button class="color" data-color="red">Red</button>
+                <button class="color" data-color="green">Green</button>
+                <button class="color" data-color="blue">Blue</button>
+            </p>
+        </section>
 
-    <br>
+        <!-- 3. Experimenta escrever... -->
+        <section>
+            <p>
+                3. Experimenta escrever...
+                <br>
+                <input type="text" id="input-escrever">
+            </p>
+        </section>
 
-    <!-- 3. Evento de seleção (Select com cores e uso do this) -->
-    <p>4. Escolha uma cor:
-        <select id="select-cores">
-            <option value="white">White</option>
-            <option value="lightcoral">Red</option>
-            <option value="lightblue">Blue</option>
-        </select>
-    </p>
+        <!-- 4. Escolha uma cor (com select e this) -->
+        <section>
+            <p>
+                4. Escolha uma cor:
+                <select id="select-cor">
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </p>
+        </section>
 
-    <!-- 4. Evento de formulário (Submit) -->
-    <form id="meu-formulario">
-        <input type="text" id="nome-utilizador" placeholder="Nome" required>
-        <button type="submit">Submeter</button>
-    </form>
-    <h2 id="saudacao"></h2>
+        <!-- 5. Conta! -->
+        <section>
+            <p>
+                5. <button id="button-conta">Conta!</button>
+                <span id="valor-contador">72</span>
+            </p>
+        </section>
 
-    <!-- 5. Contador simples -->
-    <h1 id="contador-display">0</h1>
-    <button id="btn-conta">Conta!</button>
+        <!-- 6. Formulário com onsubmit -->
+        <section>
+            <form>
+                6.
+                <input type="text" id="input-nome" placeholder="insira o seu nome">
+                <input type="text" id="input-idade" placeholder="insira a sua idade">
+                <input type="submit" value="Submit">
+            </form>
+            <p id="mensagem-dados"></p>
+        </section>
 
-    <!-- 6. Exercício Select Flex -->
-    <h2>6. Controlo de Flexbox com Select</h2>
-    <select id="select-flex">
-        <option value="row">row</option>
-        <option value="row-reverse">row-reverse</option>
-        <option value="column">column</option>
-        <option value="column-reverse">column-reverse</option>
-    </select>
+        <!-- 7. Automatic Counter com setInterval -->
+        <section>
+            <p>
+                7. Automatic Counter: <span id="auto-contador">0</span>
+            </p>
+        </section>
 
-    <div class="flex-container">
-        <div class="bola"></div>
-        <div class="bola"></div>
-        <div class="bola"></div>
-        <div class="bola"></div>
-    </div>
+        <!-- Contador Avançado com Local Storage -->
+        <section>
+            <h2>Contador Local Storage</h2>
+            <p>Valor atual: <span id="contador-valor">0</span></p>
+            <button id="btn-incrementar">Incrementar</button>
+            <button id="btn-decrementar">Decrementar</button>
+            <button id="btn-reset">Reset</button>
+        </section>
+    </main>
 
-    <!-- 7. Exercício onsubmit (Nome e Idade) -->
-    <form id="form-idade">
-        <input id="nome" type="text" placeholder="insira o seu nome" required>
-        <input id="idade" type="number" placeholder="insira a sua idade" required>
-        <button type="submit">Submit</button>
-    </form>
-    <h2 id="resultado-idade"></h2>
-    <!-- 7. Temporizador com setInterval -->
-    <h2>7. Automatic Counter: <span id="auto-counter">0</span></h2>
+    <footer>
+        <p>DIW 2026</p>
+    </footer>
 
-    <!-- 8. Contador com Local Storage -->
-    <h2>Contador com Local Storage</h2>
-    <h1 id="counter-display">0</h1>
-    <button id="btn-inc">Incrementar</button>
-    <button id="btn-dec">Decrementar</button>
-    <button id="btn-reset">Reset</button>
-
-    <script>
-        // --- Evento 1: Clique no título para mudar texto e cor ---
-        const titulo = document.querySelector('#titulo');
-        titulo.addEventListener('click', () => {
-            if (titulo.textContent === "Passa por aqui!") {
-                titulo.textContent = "Bem-vindo ao Lab 5!";
-                titulo.style.color = "blue";
-            } else {
-                titulo.textContent = "Passa por aqui!";
-                titulo.style.color = "black";
-            }
-        });
-
-        // --- Evento 2: Cliques nos botões de cores (com querySelectorAll, forEach e dataset) ---
-        document.querySelectorAll("button.color").forEach((button) => {
-            button.addEventListener('click', () => {
-                document.body.style.backgroundColor = button.dataset.color;
-            });
-        });
-
-        // --- Evento 3: Mudança de cor através de um <select> usando 'this' ---
-        document.querySelector('#select-cores').addEventListener('change', function() {
-            document.body.style.backgroundColor = this.value;
-        });
-
-        // --- Evento 4: Submissão de formulário (onsubmit) ---
-        const formulario = document.querySelector('#meu-formulario');
-        const inputNome = document.querySelector('#nome-utilizador');
-        const saudacao = document.querySelector('#saudacao');
-
-        formulario.addEventListener('submit', (evento) => {
-            evento.preventDefault();
-            saudacao.textContent = `Olá, ${inputNome.value}!`;
-        });
-
-        // --- Evento 5: Contador dinâmico ---
-        const btnConta = document.querySelector('#btn-conta');
-        const contadorDisplay = document.querySelector('#contador-display');
-        let contador = 0;
-
-        btnConta.addEventListener('click', () => {
-            contador++;
-            contadorDisplay.textContent = contador;
-        });
-
-        // --- Evento 6: Controlo de Flexbox com Select e 'this' ---
-        document.querySelector('#select-flex').addEventListener('change', function() {
-            document.querySelector('.flex-container').style.flexDirection = this.value;
-        });
-
-        // --- Evento 7: Formulário Nome e Idade ---
-        const formIdade = document.querySelector('#form-idade');
-        const inputNomeIdade = document.querySelector('#nome');
-        const inputIdade = document.querySelector('#idade');
-        const resultadoIdade = document.querySelector('#resultado-idade');
-
-        formIdade.addEventListener('submit', (e) => {
-            e.preventDefault(); // Para não recarregar a página[cite: 6]
-            resultadoIdade.textContent = `Olá, o ${inputNomeIdade.value} tem ${inputIdade.value}!`;
-        });
-
-        // Se não existe a chave counter em localStorage, inicializamos[cite: 6].
-        if (!localStorage.getItem('counter')) {
-            localStorage.setItem('counter', 0);
-        }
-
-        // Elemento do display do contador com Local Storage
-        const counterDisplay = document.querySelector('#counter-display');
-
-        // Quando carregada a página, devemos atualizar o elemento que mostra o counter[cite: 6]
-        counterDisplay.textContent = localStorage.getItem('counter');
-
-        // Botão Incrementar
-        document.querySelector('#btn-inc').addEventListener('click', () => {
-            let contador = parseInt(localStorage.getItem('counter'));
-            contador++;
-            counterDisplay.textContent = contador;
-            localStorage.setItem('counter', contador);
-        });
-
-        // Botão Decrementar
-        document.querySelector('#btn-dec').addEventListener('click', () => {
-            let contador = parseInt(localStorage.getItem('counter'));
-            contador--;
-            counterDisplay.textContent = contador;
-            localStorage.setItem('counter', contador);
-        });
-
-        // Botão Reset
-        document.querySelector('#btn-reset').addEventListener('click', () => {
-            let contador = 0;
-            counterDisplay.textContent = contador;
-            localStorage.setItem('counter', contador);
-        });
-
-        // --- Evento 7: Temporizador com setInterval ---
-        let contadorAuto = 0;
-
-        function count() {
-            contadorAuto++;
-            document.querySelector('#auto-counter').textContent = contadorAuto;
-        }
-
-        // Executa a função count a cada 1000 milissegundos (1 segundo)[cite: 9]
-        setInterval(count, 1000);
-    </script>
-
+    <!-- Script no final do body -->
+    <script src="scripts/main.js"></script>
 </body>
 </html>

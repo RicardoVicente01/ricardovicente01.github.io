@@ -1,0 +1,87 @@
+/* Estilos gerais da página com um tom azul-bebé suave */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(225, 196, 196); /* Azul-bebé suave para o fundo geral */
+    color: #333;
+}
+
+h1, h2 {
+    color: rgb(18, 81, 169); /* Azul escuro elegante para os títulos */
+}
+
+/* Estilização da grelha de produtos */
+#produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Fundo de cada cartão de produto num tom azul-bebé pastel */
+#produtos article {
+    background-color: #e0f2fe; /* Azul pastel suave para a caixa do produto */
+    border: 1px solid #bae6fd;  /* Bordo num tom azul a condizer */
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#produtos article img {
+    max-width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Secção do Cesto de Compras */
+#cesto {
+    background-color: #e2e8f0; /* Fundo azul-acinzentado elegante para a caixa do cesto */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Artigos individuais dentro do cesto */
+#cesto article {
+    background-color: #ffffff; /* Fundo branco nos itens do cesto para máxima legibilidade */
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo dos botões */
+button {
+    background-color: #3b82f6; /* Azul bonito para os botões */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* Botão de remover no cesto */
+button.btn-remover {
+    background-color: #ef4444; /* Vermelho suave para o botão remover */
+}
+
+button.btn-remover:hover {
+    background-color: #dc2626;
+}

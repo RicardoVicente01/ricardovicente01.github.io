@@ -1,57 +1,69 @@
-// 1. Pesquisa de elementos fora das funções (Boas Práticas de Performance)
-let contadorValor = 0;
-const spanContador = document.querySelector('#contador');
-const btnContar = document.querySelector('#btn-contar');
+// Otimização: Pesquisas feitas fora das funções (Boas Práticas)
 
-const btnInterativo = document.querySelector('#btn-interativo');
-const textoEvento = document.querySelector('#texto-evento');
+// --- 1. Evento: mouseover / mouseout ---
+const textoPassa = document.querySelector('#texto-passa');
 
-const caixaHover = document.querySelector('#caixa-hover');
-const areaMovimento = document.querySelector('#area-movimento');
-const spanCoords = document.querySelector('#coords');
-const imagem = document.querySelector('#minha-imagem');
-
-// 2. Implementação do Contador (Evento: click)
-btnContar.addEventListener('click', function() {
-    contadorValor++;
-    spanContador.textContent = contadorValor;
+textoPassa.addEventListener('mouseover', function() {
+    textoPassa.textContent = '1. Obrigado por passares!';
 });
 
-// 3. Evento: click num botão alternativo
-btnInterativo.addEventListener('click', function() {
-    textoEvento.textContent = "Clicaste no botão principal!";
-    textoEvento.style.color = "#e74c3c";
+textoPassa.addEventListener('mouseout', function() {
+    textoPassa.textContent = '1. Passa por aqui!';
 });
 
-// 4. Evento: dblclick (Duplo clique)
-btnInterativo.addEventListener('dblclick', function() {
-    textoEvento.textContent = "Fizeste DUPLO clique! Excelente.";
-    textoEvento.style.color = "#27ae60";
+// --- 2. Evento: click para pintar o título ---
+const tituloPinta = document.querySelector('#titulo-pinta');
+const buttonRed = document.querySelector('#button-red');
+const buttonGreen = document.querySelector('#button-green');
+const buttonBlue = document.querySelector('#button-blue');
+
+buttonRed.addEventListener('click', function() {
+    tituloPinta.style.color = 'red';
 });
 
-// 5. Eventos: mouseover e mouseout na caixa
-caixaHover.addEventListener('mouseover', function() {
-    caixaHover.style.backgroundColor = '#f9e79f';
-    caixaHover.textContent = "O rato está aqui dentro! (Mouseover)";
+buttonGreen.addEventListener('click', function() {
+    tituloPinta.style.color = 'green';
 });
 
-caixaHover.addEventListener('mouseout', function() {
-    caixaHover.style.backgroundColor = '#ecf0f1';
-    caixaHover.textContent = "O rato saiu da caixa! (Mouseout)";
+buttonBlue.addEventListener('click', function() {
+    tituloPinta.style.color = 'blue';
 });
 
-// 6. Evento: mousemove (Acompanhar o movimento do rato)
-areaMovimento.addEventListener('mousemove', function(evento) {
-    const x = evento.clientX;
-    const y = evento.clientY;
-    spanCoords.textContent = `X: ${x}, Y: ${y}`;
+// --- 3. Evento: input (muda a cor do input ciclicamente pelas 4 cores ou volta ao azul claro se vazio) ---
+const inputEscrever = document.querySelector('#input-escrever');
+// Array com as 4 cores pedidas: cinzento, amarelo, vermelho, azul
+const cores = ['gray', 'yellow', 'red', 'blue'];
+
+inputEscrever.addEventListener('input', function() {
+    const comprimento = inputEscrever.value.length;
+
+    if (comprimento === 0) {
+        // Quando apaga tudo, fica com o azul claro da foto (#add8e6 ou #b0e0e6)
+        inputEscrever.style.backgroundColor = '#add8e6';
+    } else {
+        // Alterna entre as 4 cores com base no tamanho do texto escrito
+        const indiceCor = (comprimento - 1) % cores.length;
+        inputEscrever.style.backgroundColor = cores[indiceCor];
+    }
 });
 
-// 7. Evento extra na imagem com rato
-imagem.addEventListener('mouseover', function() {
-    imagem.style.transform = "scale(1.05)";
+// --- 4. Evento: submeter cor (muda o fundo total da página) ---
+const inputCor = document.querySelector('#input-cor');
+const buttonSubmeter = document.querySelector('#button-submeter');
+
+buttonSubmeter.addEventListener('click', function() {
+    const cor = inputCor.value.trim().toLowerCase();
+    if (cor) {
+        document.body.style.background = cor;
+    }
 });
 
-imagem.addEventListener('mouseout', function() {
-    imagem.style.transform = "scale(1)";
+// --- 5. Evento: contador (começa em 33) ---
+const buttonConta = document.querySelector('#button-conta');
+const valorContador = document.querySelector('#valor-contador');
+let contador = 33;
+
+buttonConta.addEventListener('click', function() {
+    contador++;
+    valorContador.textContent = contador;
 });
